@@ -17,4 +17,8 @@ Project {
     }
     /* List of plugin directories passed to QML runtime */
     // importPaths: [ "../exampleplugin" ]
+
+    Files {
+        filter: "*.txt;*.xml;*.htm"
+    }
 }

@@ -1,4 +1,12 @@
-// import QtQuick 1.0 // to target S60 5th Edition or Maemo 5
+/*
+ * File:
+ * Description:
+ * Author: dyoung24
+ * Instructor: Johnson
+ * Course: CS 422
+ * Date: 5-2-2012
+ */
+
 import QtQuick 1.1
 
 Rectangle {
