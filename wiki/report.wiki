@@ -19,11 +19,11 @@ Additionally I wanted to focus on versatility and ease of use.  This turned out 
 
 While not needed, SQLite support was included since it was relatively easy to do.  This mechanism of storing the model data also turned out to be functionally useful, as the SQL queries aided in the search filter requirements (recall there are 4 ways to filter the selections).
 
-As with the Vendor application, here we use QML ListModel to populate the database.  Once it's accomplished, data is read from the database, which is created on disk.  A depiction of the schema with one table follows.
+As with the Vendor application, here we use QML ListModel to populate the database.  Once it's accomplished, data is read from the database, which is created on disk.  All SQL routines are located in the DBIntegration.qml source file.  A depiction of the schema with one table follows.
 
 http://cs422projectx.googlecode.com/files/Clipboard05.png
 
-
+For more information about Qt's built-in support for SQLite, [http://doc.qt.nokia.com/4.7-snapshot/qdeclarativeglobalobject.html#offline-storage-api visit their website].
 ----
 
 
