@@ -1,13 +1,14 @@
 /*
- * File:
- * Description:
+ * Project: PeopleFinder
  * Author: dyoung24
  * Instructor: Johnson
  * Course: CS 422
  * Date: 5-2-2012
  */
 
-//http://jryannel.wordpress.com/2010/02/09/slider-component/#more-70
+/* With credit to http://jryannel.wordpress.com/2010/02/09/slider-component/#more-70
+ */
+
 import QtQuick 1.1
 
 Item {

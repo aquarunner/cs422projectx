@@ -1,6 +1,5 @@
 /*
- * File:
- * Description:
+ * Project: PeopleFinder
  * Author: dyoung24
  * Instructor: Johnson
  * Course: CS 422
