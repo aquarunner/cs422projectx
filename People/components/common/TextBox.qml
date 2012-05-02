@@ -1,13 +1,12 @@
 /*
- * File:
- * Description:
+ * Project: PeopleFinder
  * Author: dyoung24
  * Instructor: Johnson
  * Course: CS 422
  * Date: 5-2-2012
  */
 
-/* Inspired by http://jryannel.wordpress.com/2010/02/17/using-textinput/
+/* With credit to http://jryannel.wordpress.com/2010/02/17/using-textinput/
  */
 
 
