@@ -14,14 +14,15 @@ import "components/pages"
 SimplePage {
     id: people
 
-    width: 1000
-    height: 650
+    //width: 1000
+    //height: 650
 
-    //width: 1024
-    //height: 768
+    width: 1024
+    height: 768
 
     DefaultSettings { id: settings }
     DBIntegration { id: dbi }
+    Helper { id: helper }
     Main { id: main }
 
 }

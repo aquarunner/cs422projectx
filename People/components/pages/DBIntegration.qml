@@ -13,23 +13,15 @@ Item {
     id: container
 
 
-    /* Properties
-     */
-
-    property string productDataSource: "../models/ProductsModel.qml"
-    property string machineDataSource: "../models/MachinesModel.qml"
-    property string currencyDataSource: "../models/CurrenciesModel.qml"
+    property string peopleDataSource: "../models/PeopleModel.qml"
 
     property string dbName: settings.appName + "DB"
     property string dbVer: "1.0"
     property string dbDesc: ""
     property int dbSize: 10000
 
-    property bool alwaysReset: true
+    property bool alwaysReset: false
     property bool initialized: false
-
-    /* Functions
-     */
 
     function openDB() {
         try {
@@ -44,11 +36,7 @@ Item {
         db.transaction(
                     function(tx) {
                         try {
-                            tx.executeSql("DROP TABLE IF EXISTS Products");
-                            tx.executeSql("DROP TABLE IF EXISTS Machines");
-                            tx.executeSql("DROP TABLE IF EXISTS Currencies");
-                            tx.executeSql("DROP TABLE IF EXISTS Settings");
-                            tx.executeSql("DROP TABLE IF EXISTS History");
+                            tx.executeSql("DROP TABLE IF EXISTS People");
                         } catch(error) {
                             console.log("resetDB: " + error);
                         }
@@ -56,6 +44,11 @@ Item {
     }
 
     function doSql(sql) {
+//        if (!container.initialized) {
+//            console.log("doSql: DB is not initialized (" + sql + ")");
+//            return;
+//        }
+
         var db = openDB();
 
         if (db === undefined) {
@@ -69,7 +62,7 @@ Item {
                         try {
                             result = tx.executeSql(sql);
                         } catch(error) {
-                            console.log("doSql: " + error);
+                            console.log("doSql: " + error + "(" + sql + ")");
                         }
                     })
 
@@ -90,137 +83,75 @@ Item {
         var i;
 
 
-        /* Load products into the database
+        /* Load people records into the database
          */
-        component = Qt.createComponent(productDataSource);
+        component = Qt.createComponent(peopleDataSource);
         if (component.status !== Component.Ready) {
-            console.log("initialize: Product data source didn't load");
+            console.log("initialize: People data source didn't load");
             return;
         } else {
 
-            sqlStatement = "CREATE TABLE IF NOT EXISTS Products(id INTEGER PRIMARY KEY, name TEXT, price REAL, image TEXT, category TEXT, favorite TEXT, allergens TEXT, machines TEXT)";
+            sqlStatement = "CREATE TABLE IF NOT EXISTS People(id INTEGER PRIMARY KEY, lastName TEXT, firstName TEXT, fullName TEXT, image TEXT, email TEXT, room TEXT, building TEXT, office TEXT, phone TEXT, floor TEXT, dept TEXT, subdept TEXT)";
             result = doSql(sqlStatement);
+            //console.log(result.);
 
-            model = component.createObject(null);
+            result = doSql("SELECT * FROM People");
 
-            for (i = 0; i < model.count; ++i) {
-                sqlStatement = "INSERT INTO Products(name,price,image,category,favorite,allergens,machines) VALUES('" +
-                        model.get(i).name + "'," +
-                        model.get(i).price + ",'" +
-                        model.get(i).image + "','" +
-                        model.get(i).category + "','" +
-                        model.get(i).favorite+ "','" +
-                        model.get(i).allergens + "','" +
-                        model.get(i).machines + "')";
-                doSql(sqlStatement);
+            // Populate the table if and only if there isn't already data there
+            if (result.rows.length === 0) {
+
+                model = component.createObject(null);
+
+                for (i = 0; i < model.count; ++i) {
+                    sqlStatement = "INSERT INTO People(lastName,firstName,fullName,image,email,room,building,office,phone,floor,dept,subdept) VALUES('" +
+                            model.get(i).lastName + "','" +
+                            model.get(i).firstName + "','" +
+                            model.get(i).fullName + "','" +
+                            model.get(i).image + "','" +
+                            model.get(i).email + "','" +
+                            model.get(i).room + "','" +
+                            model.get(i).building + "','" +
+                            model.get(i).office + "','" +
+                            model.get(i).phone + "','" +
+                            model.get(i).floor + "','" +
+                            model.get(i).dept + "','" +
+                            model.get(i).subdept + "')";
+                    doSql(sqlStatement);
+                }
             }
         }
 
 
-        /* Load vending machines into the database
-         */
-        component = Qt.createComponent(machineDataSource);
-        if (component.status !== Component.Ready) {
-            console.log("initialize: Machine data source didn't load");
-            return;
-        } else {
-
-            sqlStatement = "CREATE TABLE IF NOT EXISTS Machines(id INTEGER PRIMARY KEY, map TEXT)";
-            result = doSql(sqlStatement);
-
-            model = component.createObject(null);
-
-            for (i = 0; i < model.count; ++i) {
-                sqlStatement = "INSERT INTO Machines(map) VALUES('" +
-                        model.get(i).map + "')";
-                doSql(sqlStatement);
-            }
-        }
-
-
-        /* Load currencies into the database
-         */
-        component = Qt.createComponent(currencyDataSource);
-        if (component.status !== Component.Ready) {
-            console.log("initialize: Currency data source didn't load");
-            return;
-        } else {
-
-            sqlStatement = "CREATE TABLE IF NOT EXISTS Currencies(id INTEGER PRIMARY KEY, name TEXT, rate REAL, code TEXT)";
-            result = doSql(sqlStatement);
-
-            model = component.createObject(null);
-
-            for (i = 0; i < model.count; ++i) {
-                sqlStatement = "INSERT INTO Currencies(name, rate, code) VALUES('" +
-                        model.get(i).name + "'," +
-                        model.get(i).rate + ",'" +
-                        model.get(i).code + "')";
-                doSql(sqlStatement);
-            }
-        }
-
-
-        /* Create the settings table
-         */
-        sqlStatement = "CREATE TABLE IF NOT EXISTS Settings(key TEXT, val TEXT)";
-        result = doSql(sqlStatement);
-
-
-        /* Create the history table
-         */
-        sqlStatement = "CREATE TABLE IF NOT EXISTS History(id INT, timestamp TEXT)";
-        result = doSql(sqlStatement);
-
-        initialized = true;
+        container.initialized = true;
     } // initialize()
 
 
 
-    function setSetting(key, val) {
-        var sqlStatement = "REPLACE INTO Settings(key, val) VALUES('" +
-                key + "', '" + val + "')";
-        var result = doSql(sqlStatement);
 
+    function importPeople(model) {
 
-        if (result.rowsAffected !== 1) {
-            console.log(result.rowsAffected);
-            console.log(result.insertId);
-            return false;
-        } else {
-            return true;
-        }
-    }
+        var sqlStatement = "SELECT * FROM People ";
 
-    function getSetting(key) {
-        var sqlStatement = "SELECT val FROM Settings WHERE key = '" + key + "'";
-        var result = doSql(sqlStatement);
+        var plus = " and ";
+        var whereClause = " WHERE ";
+        var floorSearch = " floor IN (\'\'," + helper.quote(settings.floorSearch) + ") ";
+        var deptSearch = " dept IN (\'\'," + helper.quote(settings.deptSearch) + ") ";
+        var lastNameSearch = " SUBSTR(lastName, 1, 1) IN (" + helper.quote(settings.lastNameSearch) + ") ";
+        var fullNameSearch = " fullName LIKE '%" + settings.fullNameSearch + "%'";
+        whereClause += floorSearch + plus +
+                deptSearch + plus +
+                lastNameSearch +
+                (settings.fullNameSearch ? plus + fullNameSearch : "");
 
-        if (result.rows.length !== 1) {
-            console.log("getSetting: no results!");
-            return "";
-        } else {
-            return result.rows.item(0).val;
-        }
-    }
+        whereClause += "ORDER BY lastName";
 
-
-    // type is All, Favorites or Category
-    function importProducts(model, type, category) {
-
-        var sqlStatement;
-        if (type === "Favorites")
-            sqlStatement = "SELECT * FROM Products WHERE favorite <> ''";
-        else if (type === "All")
-            sqlStatement = "SELECT * FROM Products";
-        else if (type === "Category")
-            sqlStatement = "SELECT * FROM Products WHERE category = '" + category + "'";
+        sqlStatement += whereClause;
+        //console.log(sqlStatement);
         var results = doSql(sqlStatement);
-
         var r = results.rows;
 
         if (r.length === 0) {
-            console.log("importProducts: no results");
+            //console.log("importPeople: no results");
         }
 
         model.clear();
@@ -230,110 +161,31 @@ Item {
     }
 
 
-
-    function importCategories(model) {
-
-        var sqlStatement = "SELECT DISTINCT category FROM Products";
-        var results = doSql(sqlStatement);
-
-        var r = results.rows;
-
-        if (r.length === 0) {
-            console.log("importByCategory: no results");
-        }
-
-        model.clear();
-
-        for (var i = 0; i < r.length; i++) {
-            model.append({"name": r.item(i).category});
-        }
-
-        return true;
-    }
-
-
-    function importCartItems(model, itemsString) {
-
-        model.clear();
-        var sqlStatement;
-        var result;
-
-        if (itemsString === "") {
-            console.log("importCartItems: itemsString was empty");
-            return;
-        }
-
-        // Trim followed by squish followed by split
-        var items = itemsString.replace(/^\s/,"").replace(/\s+/g," ").split(" ");
-
-        for (var i = 0; i < items.length; ++i) {
-            sqlStatement = "SELECT * FROM Products WHERE id = " + items[i];
-            result = doSql(sqlStatement);
-            reload(model, result.rows);
-        }
-
-        return true;
-    }
-
     function reload(model, r) {
 
         for (var i = 0; i < r.length; i++) {
             model.append({
                              "id": r.item(i).id,
-                             "name": r.item(i).name,
-                             "price": r.item(i).price,
+                             "lastName": r.item(i).lastName,
+                             "firstName": r.item(i).firstName,
+                             "fullName": r.item(i).fullName,
                              "image": r.item(i).image,
-                             "category": r.item(i).category,
-                             "favorite": r.item(i).favorite,
-                             "allergens": r.item(i).allergens,
-                             "machines": r.item(i).machines
+                             "email": r.item(i).email,
+                             "room": r.item(i).room,
+                             "building": r.item(i).building,
+                             "office": r.item(i).office,
+                             "phone": r.item(i).phone,
+                             "floor": r.item(i).floor,
+                             "dept": r.item(i).dept,
+                             "subdept": r.item(i).subdept
                          });
 
         }
     }
 
-    function currencyExchange(price, currencyCode) {
 
-        if (price === 0) {
-            return "0"
-        }
-
-        var sqlStatement = "SELECT rate FROM Currencies WHERE code = '" + currencyCode + "'";
-        var result = doSql(sqlStatement);
-
-        if (result.rows.length !== 1) {
-            console.log("currencyExchange: no results");
-            return 0;
-        }
-
-        var rate = result.rows.item(0).rate;
-        var exchange = price * rate;
-
-        // Returns string representation of float with decimal precision of 2
-        return parseFloat(exchange).toFixed(2);
-    }
-
-    function addFavorite(id) {
-        var sqlStatement = "UPDATE Products SET favorite='Yes' WHERE id=" + id + "";
-        var result = doSql(sqlStatement);
-
-        if (result === undefined || result.rowsAffected !== 1) {
-            console.log("addFavorite: Incorrect rows affected: " +  result.rowsAffected);
-        }
-    }
-
-    function removeFavorite(id) {
-        var sqlStatement = "UPDATE Products SET favorite='' WHERE id=" + id;
-        var result = doSql(sqlStatement);
-
-        if (result.rowsAffected !== 1) {
-            console.log("removeFavorite: Incorrect rows affected: " +  result.rowsAffected);
-        }
-    }
-
-
-    function getProductInfo(id) {
-        var sqlStatement = "SELECT * FROM Products WHERE id = " + id;
+    function getPersonDetails(id) {
+        var sqlStatement = "SELECT * FROM People WHERE id = " + id;
         var result = doSql(sqlStatement);
 
         if (result.rows.length !== 1) {
@@ -344,22 +196,4 @@ Item {
 
     }
 
-
-
-    function addToHistory(itemsString) {
-        // Trim followed by squish followed by split
-        var items = itemsString.replace(/^\s/,"").replace(/\s+/g," ").split(" ");
-
-        var sqlStatement;
-        var result;
-        var d = new Date();
-
-        var timestamp = d.toLocaleString();
-
-        for (var i = 0; i < items.length; ++i) {
-            sqlStatement = "INSERT INTO History (id, timestamp) VALUES (" + items[i] + ", '" + timestamp + "')";
-            result = doSql(sqlStatement);
-        }
-
-    }
 }

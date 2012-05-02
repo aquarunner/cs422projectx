@@ -25,7 +25,7 @@ SimplePage {
             label: "Ok"
             anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
-                main.showPage("BrowserPage");
+                mainContainer.showPage("BrowserPage");
             }
         }
     }

@@ -3,44 +3,39 @@ import "../common"
 
 // Note Multi Buttons can also be selection buttons.  So they really have 5 states
 
-Button {
+SelectionButton {
     id: container
-    bottomColor: settings.canvasColor
-    topColor: settings.canvasColor
-    label: ""
-    width: 50
-    //height: 50
+
+
+    selectionButton: false
+
+    property string imageAll: ""
+    property string imageMulti: ""
+    property string imageNone: ""
 
 
     Image {
         id: buttonImage
-        source: ""
+        //source: "../images/check_all.png"
         anchors.fill: parent
         fillMode: Image.PreserveAspectFit
         anchors.margins: 5
     }
 
-    // 1 = All
-    // 2 = Multi
-    // 3 = None
-    property int buttonState: 1
-    property int nextButtonState: 1
-
-
     function setAll() {
-        container.buttonState = 1
+        container.state = "All"
     }
     function setMulti() {
-        container.buttonState = 2
+        container.state = "Multi"
     }
     function setNone() {
-        container.buttonState = 3
+        container.state = "None"
     }
 
     onClicked: {
-        if (container.buttonState === 1) {
+        if (container.state === "All") {
             setMulti();
-        } else if (container.buttonState === 2) {
+        } else if (container.state === "Multi") {
             setNone();
         } else {
             setAll();
@@ -55,56 +50,28 @@ Button {
 
     states: [
         State {
-            name: "Selected"
-            when: container.selected
-            PropertyChanges {
-                target: container
-                opacity: 1
-            }
-        },
-        State {
-            name: "Unselected"
-            when: !container.selected
-            PropertyChanges {
-                target: container
-                opacity: settings.canvasHiddenOpacity
-            }
-        },
-        State {
             name: "All"
-            when: container.buttonState === 1
+            //when: container.buttonState === 1
             PropertyChanges {
                 target: buttonImage
-                source: "../images/all.png"
-            }
-            PropertyChanges {
-                target: container
-                //topColor: "lightcyan"
-                //bottomColor: "lightcyan"
+                source: container.imageAll
             }
         },
         State {
             name: "Multi"
-            when: container.buttonState === 2
+            //when: container.buttonState === 2
             PropertyChanges {
                 target: buttonImage
-                source: "../images/multi.png"
-            }
-            PropertyChanges {
-                target: container
-                //topColor: "khaki"
-                //bottomColor: "khaki"
+                source: container.imageMulti
             }
         },
         State {
             name: "None"
-            when: container.buttonState === 3
+            //when: container.buttonState === 3
             PropertyChanges {
                 target: buttonImage
-                source: "../images/checkbox_empty.png"
+                source: container.imageNone
             }
         }
-
-
     ]
 }

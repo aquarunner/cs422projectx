@@ -11,12 +11,12 @@ import QtQuick 1.1
 import "../common"
 
 Rectangle {
-    id: canvas
+    id: container
     color: settings.canvasColor
     anchors.fill: parent
 
     MultiPage {
-        id: main
+        id: mainContainer
 
         defaultPage: settings.firstRun ? "WelcomePage" : "BrowserPage"
 
@@ -37,7 +37,8 @@ Rectangle {
         }
     }
 
-//    MessagePop {
-//        id: pop
-//    }
+    MessagePop {
+        id: pop
+    }
+
 }

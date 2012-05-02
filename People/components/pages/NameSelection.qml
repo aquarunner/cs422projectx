@@ -4,6 +4,8 @@ import "../common"
 SelectionList {
     id: container
 
+    selection: nameSelectionRepeater
+
     Component.onCompleted: {
         var alph = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for (var i = 0; i < alph.length; ++i) {
@@ -14,16 +16,17 @@ SelectionList {
     Row {
         id: nameSelectionContainer
 
-        spacing: 5
+        //spacing: 5
 
         Repeater {
             id: nameSelectionRepeater
+            clip: true
             model: ListModel {id: alphabetModel}
 
             delegate: SelectionButton {
                 id: btn
-                height: 20
-                width: 30
+                height: 40
+                width: (container.width - 10) / 26
                 //fontSize: 8
                 label: letter
                 onClicked: {
