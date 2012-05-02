@@ -27,8 +27,6 @@ Rectangle {
     property bool fontItalic: false
 
     property alias text: container.label
-    property bool selected: true
-    property bool selectionButton: false
 
     clip: true
     height: 40
@@ -61,11 +59,6 @@ Rectangle {
         id: mouseArea
         anchors.fill: parent
         onClicked: {
-
-            if (container.selectionButton) {
-                container.selected = !container.selected
-            }
-
             container.clicked()
         }
     }
@@ -82,6 +75,5 @@ Rectangle {
         font.bold: container.fontBold
         font.italic: container.fontItalic
         color: container.fontColor
-
     }
 }

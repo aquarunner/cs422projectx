@@ -15,46 +15,66 @@ Item {
     width: 100;
     height: 400;
 
+
     property int valueLength: 100
     property int value: Math.round(handle.y*valueLength/(container.height-handle.height))
     property bool showValue: true
 
 
+    signal handleClicked()
+
     Rectangle {
-        color: "black"
+        id: guide
+        color: "grey"
         anchors.centerIn: parent
         height: parent.height
-        width: 5
-        radius: 4
+        width: 6
+        //opacity: handleMouseArea.pressed ? 1 : 0
+    //radius: 4.5
+
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 450
+            }
+        }
+
+        gradient: Gradient {
+            GradientStop {
+                position: 0.0
+                color: settings.canvasColor
+            }
+            GradientStop {
+                position: 0.5
+                color: "grey"
+            }
+            GradientStop {
+                position: 1.0
+                color: settings.canvasColor
+            }
+        }
 
     }
 
 
 
-    Rectangle {
+    Button {
         id: handle;
+        label: ((container.valueLength !== -1) ? container.value + " / " + container.valueLength : "0 / 0")
         width: parent.width;
-        height: 40
-        color: "red"
+        borderWidth: 0
+        bottomColor: handleMouseArea.pressed ? "lightcyan" : "darkslategrey"
         MouseArea {
+            id: handleMouseArea
             anchors.fill: parent
-            drag.target: parent; drag.axis: "YAxis"
+            drag.target: parent;
+            drag.axis: "YAxis"
             drag.minimumY: 0;
             drag.maximumY: container.height - handle.height
-        }
 
-        Text {
-            id: valueIndicator
-            text: container.value
-            anchors.centerIn: parent
+            onClicked: container.handleClicked();
         }
-
 
     }
-
-
-
-
 
 }
 

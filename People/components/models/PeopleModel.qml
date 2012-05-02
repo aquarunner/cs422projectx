@@ -10,11 +10,12 @@ ListModel {
         fullName: "Mark Grechanik"
         image: "drmark.jpg"
         email: "drmark@cs.uic.edu"
-        room: "1120"
-        building: "SEO"
-        office: "1120 SEO"
+        room: ""
+        building: ""
+        office: " "
         phone: ""
-        floor: "11"
+        floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -29,6 +30,7 @@ ListModel {
         office: "1013 SEO"
         phone: "312.413.9460"
         floor: "10"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -40,9 +42,10 @@ ListModel {
         email: "dtlee@iis.sinica.edu.tw"
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: ""
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -57,6 +60,7 @@ ListModel {
         office: "1032 SEO"
         phone: "312.413.9657"
         floor: "10"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -71,6 +75,7 @@ ListModel {
         office: "234 SEO"
         phone: "312.355.1789"
         floor: "2"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -82,9 +87,10 @@ ListModel {
         email: "linninge@uic.edu"
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: "312.996.2581"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -99,6 +105,7 @@ ListModel {
         office: "1023 SEO"
         phone: "312.355.4475"
         floor: "10"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -113,6 +120,7 @@ ListModel {
         office: "610 SEO"
         phone: "312.996.6168"
         floor: "6"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -127,6 +135,7 @@ ListModel {
         office: "1050CA BSB"
         phone: "312.996.6643"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -134,13 +143,14 @@ ListModel {
         lastName: "Ouksel"
         firstName: "Aris"
         fullName: "Aris Ouksel"
-        image: "aris.html"
+        image: "aris.gif"
         email: "aris@uic.edu"
         room: "2411"
         building: "UH"
         office: "2411 UH"
         phone: "312.996.0771"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -155,6 +165,7 @@ ListModel {
         office: "3029 ERF"
         phone: "312.996.5599"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -166,9 +177,10 @@ ListModel {
         email: "tpeterka@mcs.anl.gov"
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: "630.252.4588"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -183,6 +195,7 @@ ListModel {
         office: "507 SEO"
         phone: "312.413.2177"
         floor: "5"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -197,6 +210,7 @@ ListModel {
         office: "1036 SEO"
         phone: "312.355.0311"
         floor: "10"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -211,6 +225,7 @@ ListModel {
         office: "2136 SES"
         phone: "312.996.4868"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -222,9 +237,10 @@ ListModel {
         email: "msanta4@uic.edu"
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: ""
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -239,6 +255,7 @@ ListModel {
         office: "1104 SEO"
         phone: "312.996.5847"
         floor: "11"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -250,9 +267,10 @@ ListModel {
         email: "super@cs.uic.edu"
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: ""
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -267,6 +285,7 @@ ListModel {
         office: "425 SEO"
         phone: "312.413.2151"
         floor: "4"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -281,6 +300,7 @@ ListModel {
         office: "1054D BSB"
         phone: "312.355.2501"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -292,9 +312,10 @@ ListModel {
         email: "leland.wilkinson@systat.com"
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: "312.651.3270"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -306,9 +327,10 @@ ListModel {
         email: ""
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: ""
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -323,6 +345,7 @@ ListModel {
         office: "1028 SEO"
         phone: "312.996.6495"
         floor: "10"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -337,6 +360,7 @@ ListModel {
         office: "1035 SEO"
         phone: "312.413.9054"
         floor: "10"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -351,6 +375,7 @@ ListModel {
         office: "1136 SEO"
         phone: "312.413.8719"
         floor: "11"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -365,6 +390,7 @@ ListModel {
         office: "SEO 410"
         phone: "312.413.9322"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -379,6 +405,7 @@ ListModel {
         office: "1139 SEO"
         phone: "312.413.2296"
         floor: "11"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -393,6 +420,7 @@ ListModel {
         office: "1134 SEO"
         phone: "708.269.5075"
         floor: "11"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -407,6 +435,7 @@ ListModel {
         office: "933 SEO"
         phone: "312.355.1319"
         floor: "9"
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -421,6 +450,7 @@ ListModel {
         office: "2032 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "AdjunctFaculty"
     }
     ListElement {
@@ -435,6 +465,7 @@ ListModel {
         office: "916 SEO"
         phone: "312.996.7566"
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -449,6 +480,7 @@ ListModel {
         office: "1135 SEO"
         phone: "312.996.0481"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -463,6 +495,7 @@ ListModel {
         office: "1020 SEO"
         phone: "312.996.2648"
         floor: "10"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -477,6 +510,7 @@ ListModel {
         office: "935 SEO"
         phone: "312.355.1320"
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -491,6 +525,7 @@ ListModel {
         office: "2032 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -505,6 +540,7 @@ ListModel {
         office: "1133 SEO"
         phone: "312.996.0450"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -519,6 +555,7 @@ ListModel {
         office: "915 SEO"
         phone: "312.355.1309"
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -533,13 +570,14 @@ ListModel {
         office: "2032 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
         record: "39"
-        lastName: "Lilli"
+        lastName: "Lillis"
         firstName: "John"
-        fullName: "John Lilli"
+        fullName: "John Lillis"
         image: "lillis.gif"
         email: "jlillis@cs.uic.edu"
         room: "908"
@@ -547,6 +585,7 @@ ListModel {
         office: "908 SEO"
         phone: "312.355.1317"
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -561,6 +600,7 @@ ListModel {
         office: "931 SEO"
         phone: "312.355.1318"
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -575,6 +615,7 @@ ListModel {
         office: "918 SEO"
         phone: ""
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -589,6 +630,7 @@ ListModel {
         office: "3009 ERF"
         phone: "312.996.4562"
         floor: ""
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -603,6 +645,7 @@ ListModel {
         office: "1107 SEO"
         phone: "312.996.2307"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -617,6 +660,7 @@ ListModel {
         office: "3003 ERF"
         phone: "312.996.9611"
         floor: ""
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -631,6 +675,7 @@ ListModel {
         office: "838 SEO"
         phone: "312.996.3259"
         floor: "8"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -645,6 +690,7 @@ ListModel {
         office: "917 SEO"
         phone: "312.413.9478"
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -659,6 +705,7 @@ ListModel {
         office: "2032 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -673,6 +720,7 @@ ListModel {
         office: "817 SEO"
         phone: "3317"
         floor: "8"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -687,6 +735,7 @@ ListModel {
         office: "1033 SEO"
         phone: "312.996.8779"
         floor: "10"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -701,6 +750,7 @@ ListModel {
         office: "1112 SEO"
         phone: "312.996.2369"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -715,6 +765,7 @@ ListModel {
         office: "4224B SEL"
         phone: "312.996.0955"
         floor: ""
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -729,6 +780,7 @@ ListModel {
         office: "941 SEO"
         phone: "312.413.9267"
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -743,6 +795,7 @@ ListModel {
         office: "919 SEO"
         phone: "312.996.8521"
         floor: "9"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -757,6 +810,7 @@ ListModel {
         office: "1115 SEO"
         phone: "312.996.9324"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -771,6 +825,7 @@ ListModel {
         office: "233 SEO"
         phone: "312.413.1487"
         floor: "2"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -785,6 +840,7 @@ ListModel {
         office: "1131 SEO"
         phone: "312.996.4860"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -799,6 +855,7 @@ ListModel {
         office: "1137 SEO"
         phone: "312.996.6770"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -813,6 +870,7 @@ ListModel {
         office: "1100 SEO"
         phone: "312.996.2318"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -827,6 +885,7 @@ ListModel {
         office: "1138 SEO"
         phone: "312.996.0498"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -841,6 +900,7 @@ ListModel {
         office: "1140 SEO"
         phone: "312.355.1339"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -855,6 +915,7 @@ ListModel {
         office: "1116 SEO"
         phone: "312.413.2911"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -869,6 +930,7 @@ ListModel {
         office: "1119 SEO"
         phone: "312.413.0130"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -883,6 +945,7 @@ ListModel {
         office: "1120 SEO"
         phone: "312.413.2282"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -897,6 +960,7 @@ ListModel {
         office: "1118 SEO"
         phone: "312.413.2285"
         floor: "11"
+        dept: "CS"
         subdept: "Faculty"
     }
     ListElement {
@@ -911,6 +975,7 @@ ListModel {
         office: "905 SEO"
         phone: "312.413.4950"
         floor: "9"
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -925,6 +990,7 @@ ListModel {
         office: "2055 ERF"
         phone: "312.996.6593"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -939,6 +1005,7 @@ ListModel {
         office: "905 SEO"
         phone: "312.996.2290"
         floor: "9"
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -953,6 +1020,7 @@ ListModel {
         office: "1125 SEO"
         phone: "312.355.2419"
         floor: "11"
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -967,6 +1035,7 @@ ListModel {
         office: "2260 SEL"
         phone: "312.996.3182"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -981,6 +1050,7 @@ ListModel {
         office: "2032 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -995,6 +1065,7 @@ ListModel {
         office: "2038 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1009,6 +1080,7 @@ ListModel {
         office: "2032 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1023,6 +1095,7 @@ ListModel {
         office: "2038 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1037,6 +1110,7 @@ ListModel {
         office: "2038 ERF"
         phone: "312.996.3002"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1051,6 +1125,7 @@ ListModel {
         office: "800 SEO"
         phone: "312.996.5598"
         floor: "8"
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1065,6 +1140,7 @@ ListModel {
         office: "803 SEO"
         phone: "3194"
         floor: "8"
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1079,6 +1155,7 @@ ListModel {
         office: "930 SEO"
         phone: "312.355.1314"
         floor: "9"
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1090,9 +1167,10 @@ ListModel {
         email: "jackp@uic.edu"
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: "312.996.4246"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1107,6 +1185,7 @@ ListModel {
         office: "927 SEO"
         phone: "312.996.5229"
         floor: "9"
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1121,6 +1200,7 @@ ListModel {
         office: "ADVIS Lab"
         phone: "312.413.3192"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1135,6 +1215,7 @@ ListModel {
         office: "4030 SEL"
         phone: "312.996.4481"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1146,9 +1227,10 @@ ListModel {
         email: "steve.eick@gmail.com"
         room: ""
         building: ""
-        office: ""
+        office: " "
         phone: "630.596.5420"
         floor: ""
+        dept: "CS"
         subdept: "Staff"
     }
     ListElement {
@@ -1163,7 +1245,7 @@ ListModel {
         office: "1117 SEO"
         phone: "312.996.3085"
         floor: "11"
+        dept: "CS"
         subdept: "Staff"
     }
-
 }

@@ -34,7 +34,7 @@ Rectangle {
         id: exampleText
         enabled: false
         opacity: 0.3
-        visible: !container.input
+        visible: !container.input && !textInput.focus
         text: container.exampleText
         anchors.fill: parent
         anchors.margins: 5

@@ -3,17 +3,20 @@ import "../common"
 
 SelectionList {
     id: container
+    selection: floorSelectionRepeater
 
     Row {
         id: floorSelectionContainer
-
-        spacing: 10
+        //clip: true
+        //spacing: 10
 
         Repeater {
             id: floorSelectionRepeater
             model: 13
             delegate: SelectionButton {
                 id: btn
+                width: (container.width - 20) / 13
+                height: 40
                 label: index + 1
                 onClicked: {
                     if (btn.selected) {
