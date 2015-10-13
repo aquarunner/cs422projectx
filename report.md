@@ -1,0 +1,47 @@
+# Design Notes #
+
+### Introduction ###
+
+This application was developed in haste, and so some of the implementation details are missing.  What I started out designing was mostly achieved, however.
+
+![http://cs422projectx.googlecode.com/files/Clipboard04.png](http://cs422projectx.googlecode.com/files/Clipboard04.png)
+
+If you've had a chance to view the [Vendor application](http://code.google.com/p/cs422project1/wiki/readme) for Project 1, you will notice immediately that the design and implementation elements were duplicated for this one.
+
+The original thoughts included manual control of the database records using a slider.  I knew this would be useful given the amount of data to be aggregated.  I also stipulated that the slider must be able to control multiple views and have multiple functions.
+
+Additionally I wanted to focus on versatility and ease of use.  This turned out to translate to having multiple ways of controlling the information that is shown.  To that end, there are two ways to examine people images -- through person details view and grid view -- and four ways to filter the people selection -- by last name, office floor, department and partial full name search.
+
+
+### Database Support ###
+
+While not needed, SQLite support was included since it was relatively easy to do.  This mechanism of storing the model data also turned out to be functionally useful, as the SQL queries aided in the search filter requirements (recall there are 4 ways to filter the selections).
+
+As with the Vendor application, here we use QML ListModel to populate the database.  Once it's accomplished, data is read from the database, which is created on disk.  All SQL routines are located in the DBIntegration.qml source file.  A depiction of the schema with one table follows.
+
+![http://cs422projectx.googlecode.com/files/Clipboard05.png](http://cs422projectx.googlecode.com/files/Clipboard05.png)
+
+For more information about Qt's built-in support for SQLite, [visit their website](http://doc.qt.nokia.com/4.7-snapshot/qdeclarativeglobalobject.html#offline-storage-api).
+
+---
+
+
+
+### References ###
+
+Free icons
+http://www.findicons.com
+
+Qt Quick / QML
+http://qt-project.org/doc/qt-4.8/qtquick.html
+
+iPhone specs
+http://www.apple.com/iphone/specs.html
+
+QML Offline Storage API
+http://doc.qt.nokia.com/4.7-snapshot/qdeclarativeglobalobject.html#database-api
+
+SQLite Browser
+http://sqlitebrowser.sourceforge.net/
+
+---
